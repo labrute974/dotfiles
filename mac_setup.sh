@@ -16,7 +16,7 @@ for cpkg in atom evernote spotify virtualbox dash vagrant
 do
   if ! brew cast list $cpkg &> /dev/null
   then
-    brew cask install pkg
+    brew cask install $cpkg
   fi
 done
 
