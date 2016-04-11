@@ -4,7 +4,7 @@ WORKDIR=$(dirname $0)
 BREW=$(which brew)
 [[ -z "$BREW" ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-for pkg in tmux vim bash bash-git-prompt tig wget tcpdump node brew-cask nmap tcpdump
+for pkg in tmux vim bash bash-git-prompt tig wget tcpdump node brew-cask nmap homebrew/dupes/tcpdump
 do
   if ! brew list $pkg &> /dev/null
   then
@@ -14,7 +14,7 @@ done
 
 for cpkg in atom evernote spotify virtualbox dash vagrant
 do
-  if ! brew cast list $cpkg &> /dev/null
+  if ! brew cask list $cpkg &> /dev/null
   then
     brew cask install $cpkg
   fi
@@ -22,7 +22,7 @@ done
 
 for file in tmux.conf vimrc bash_profile
 do
-  [[ ! -e $file ]] && cp ${WORKDIR}/$file ~/.$file
+  [[ ! -e ~/.$file ]] && cp -f ${WORKDIR}/$file ~/.$file
 done
 
 ## SETUP GIT
