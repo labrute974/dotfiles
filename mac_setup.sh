@@ -29,4 +29,7 @@ done
 git config --global user.name "Karel Malbroukou"
 git config --global user.email "karel.malbroukou@gmail.com"
 
+## Setup Atom
+apm install vim-mode markdown-toc markdown-preview-plus atom-ternjs
+
 exit 0
