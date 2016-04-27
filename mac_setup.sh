@@ -4,7 +4,7 @@ WORKDIR=$(dirname $0)
 BREW=$(which brew)
 [[ -z "$BREW" ]] && /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-for pkg in tmux vim bash bash-git-prompt tig wget tcpdump node brew-cask nmap homebrew/dupes/tcpdump
+for pkg in tmux vim bash bash-git-prompt tig wget tcpdump node brew-cask nmap homebrew/dupes/tcpdump gnu-sed
 do
   if ! brew list $pkg &> /dev/null
   then
